@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransLang - Your Interactive Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+   
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="preloader-content">
+            <h2 class="preloader-logo">TransLang</h2>
+            <div class="spinner"></div>
+            <p>Loading your experience...</p>
+        </div>
+    </div>
+
+    <div class="custom-cursor">
+        <div class="cursor-circle"></div>
+        <div class="cursor-dot"></div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <h1 class="logo anim-header-item">TransLang</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li class="anim-header-item"><a href="#translator">Translator</a></li>
+                    <li class="anim-header-item"><a href="#features">Features</a></li>
+                    <li class="anim-header-item"><a href="#about">About Us</a></li>
+                    <li class="anim-header-item"><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container hero-content-wrapper">
+                <div class="hero-content">
+                    <h2 class="anim-hero-text">Translate Anything, Instantly.</h2>
+                    <p class="anim-hero-text">Experience seamless translation with TransLang's intelligent engine.</p>
+                    <button class="cta-button anim-hero-button">Start Translating</button>
+                </div>
+                <div class="hero-visual">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5088/5088238.png" alt="Translation Visual" class="anim-hero-visual">
+                </div>
+            </div>
+        </section>
+
+        <section id="translator" class="translator-section">
+            <div class="container">
+                <h3 class="anim-section-title">The TransLang Engine</h3>
+                <div class="translation-interface">
+                    <div class="input-area anim-fade-up">
+                        <textarea id="sourceText" placeholder="Enter text to translate..." rows="8"></textarea>
+                        <div class="language-selector">
+                            <label for="sourceLang">From:</label>
+                            <select id="sourceLang">
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="ta">Tamil</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="translate-actions anim-fade-up">
+                        <button id="translateButton">Translate</button>
+                         
+                    </div>
+                    
+                    <div class="output-area anim-fade-up">
+                        <textarea id="targetText" placeholder="Translation will appear here..." rows="8" readonly></textarea>
+                        <div class="language-selector">
+                            <label for="targetLang">To:</label>
+                            <select id="targetLang">
+                                <option value="es">Spanish</option>
+                                <option value="en">English</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="ta">Tamil</option>
+                            </select>
+                        </div>
+                        <div id="translatedHTMLContainer" style="margin-top: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h3 class="anim-section-title">Powerful Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item anim-feature-item">
+                        <h4>Real-time Translation</h4>
+                        <p>Get instant translations as you type.</p>
+                    </div>
+                    <div class="feature-item anim-feature-item">
+                        <h4>Multi-Language Support</h4>
+                        <p>Translate across a vast array of languages.</p>
+                    </div>
+                    <div class="feature-item anim-feature-item">
+                        <h4>Contextual Accuracy</h4>
+                        <p>Our AI understands nuances for better translations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h3 class="anim-section-title">About TransLang</h3>
+                <p class="anim-fade-up">TransLang is dedicated to breaking down language barriers and fostering global communication. Our mission is to provide an accurate, fast, and user-friendly translation experience.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h3 class="anim-section-title">Get in Touch</h3>
+                <p class="anim-fade-up">Have questions or feedback? Fill out the form below, and we'll get back to you!</p>
+                <form class="contact-form anim-fade-up">
+                    <div class="form-group">
+                        <label for="contactName">Name:</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email:</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNumber">Phone Number (Optional):</label>
+                        <input type="tel" id="contactNumber" name="contactNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message:</label>
+                        <textarea id="contactMessage" name="contactMessage" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 TransLang. All rights reserved.</p>
+        </div>
+    </footer>
+ <script  src="script.js"></script>
+</body>
+</html>
+
